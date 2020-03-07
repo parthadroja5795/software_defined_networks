@@ -1,0 +1,47 @@
+{
+	"HP OVS":{
+		"SwitchIP":"10.20.30.57",
+		"device_type":"linux",
+		"username":"parth",
+		"password":"parth",
+		"Controller IP":"10.20.30.55",
+		"OF version":"1.3",
+		"Commands":"sudo ovs-vsctl add-br hp_br, sudo ovs-vsctl add-port hp_br enp4s0, sudo ovs-vsctl add-port hp_br enx000ec6c4fa90, sudo ip link set hp_br up, sudo ovs-vsctl set-controller hp_br tcp:10.20.30.55:6633, sudo ovs-vsctl  set bridge hp_br protocols=OpenFlow13"
+		},
+	"ABMX-dell OVS":{
+		"SwitchIP":"10.20.30.65",
+		"device_type":"linux",
+		"username":"parth",
+		"password":"parth",
+		"Controller IP":"10.20.30.55",
+		"OF version":"1.3",
+		"Commands":"sudo ovs-vsctl add-br abmx_br, sudo ovs-vsctl add-port abmx_br eno1, sudo ovs-vsctl add-port abmx_br eno2, sudo ovs-vsctl add-port abmx_br eno4, sudo ip link set abmx_br up, sudo ovs-vsctl set-controller abmx_br tcp:10.20.30.55:6633, sudo ovs-vsctl  set bridge abmx_br protocols=OpenFlow13"
+		},
+	"Dell OVS":{
+		"SwitchIP":"10.20.30.56",
+		"device_type":"linux",
+		"username":"parth",
+		"password":"parth",
+		"Controller IP":"10.20.30.55",
+		"OF version":"1.3",
+		"Commands":"sudo ovs-vsctl add-br dell_br, sudo ovs-vsctl add-port dell_br eno1, sudo ovs-vsctl add-port dell_br eno2, sudo ovs-vsctl add-port dell_br eno4, sudo ip link set dell_br up, sudo ovs-vsctl set-controller dell_br tcp:10.20.30.55:6633, sudo ovs-vsctl  set bridge dell_br protocols=OpenFlow13"
+		},
+	"HP Switch":{
+		"SwitchIP":"10.20.30.229",
+		"device_type":"arista_eos",
+		"username":"parth",
+		"password":"parth",
+		"Controller IP":"10.20.30.55",
+		"OF version":"1.3",
+		"Commands":"conf t,hardware port-group 1 select ET17-20,vlan 10,name hosts,exit,vlan 20,name sdn,exit,interface ethernet 19-20,switchport access vlan 10,exit,interface ethernet 17,switchport access vlan 20,exit,interface vlan 20,ip address 10.20.30.229 255.255.255.0,exit,exit,openflow,no shutdown,bind mode vlan,bind vlan 10,bind interface ethernet 19-20,controller tcp:10.20.30.55:6633,exit,exit"
+		},
+	"Arista Switch":{
+		"SwitchIP":"10.20.30.200",
+		"device_type":"arista_eos",
+		"username":"parth",
+		"password":"parth",
+		"Controller IP":"10.20.30.55",
+		"OF version":"1.3",
+		"Commands":"conf t,hardware port-group 1 select ET17-20,vlan 10,name hosts,exit,vlan 20,name sdn,exit,interface ethernet 18-20,switchport access vlan 10,exit,interface ethernet 17,switchport access vlan 200,exit,interface vlan 200,ip address 10.20.30.200 255.255.255.0,exit,exit,openflow,no shutdown,bind mode vlan,bind vlan 10,bind interface ethernet 18-20,controller tcp:10.20.30.55:6633,exit,exit"
+		}
+}
